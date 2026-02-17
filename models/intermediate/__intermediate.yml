@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_customers_orders
+    description: "Intermediate model joining customer and order data."
+    columns:
+      - name: order_id
+        description: "The unique key for each order."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to the customer table."
+        tests:
+          - not_null
+      - name: customer_name
+        description: "the name of the customer"
+      - name: order_total
+        description: "The total amount of the order in dollars."
+      - name: tax_paid
+        description: "The amount of tax paid for the order in dollars."
+      - name: ordered_at
+        description: "The timestamp when the order was placed."

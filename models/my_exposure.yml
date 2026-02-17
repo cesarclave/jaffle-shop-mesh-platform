@@ -9,8 +9,8 @@ exposures:
       Did someone say "exponential growth"?
 
     depends_on:
-      - ref('stg_customers')
-      - ref('stg_orders')
+      - ref('dim_customers')
+      - ref('fct_orders')
 
     owner:
       name: Callum McData

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimension model for customers."
+    columns:
+      - name: customer_id
+        description: "The unique key for each customer."
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "The name of the customer."
+
+  - name: fct_orders
+    description: "Fact model for orders."
+    columns:
+      - name: order_id
+        description: "The unique key for each order."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to the customer table."
+        tests:
+          - not_null
+      - name: order_total
+        description: "The total amount of the order in dollars."
+      - name: tax_paid
+        description: "The amount of tax paid for the order in dollars."
+      - name: ordered_at
+        description: "The timestamp when the order was placed."
